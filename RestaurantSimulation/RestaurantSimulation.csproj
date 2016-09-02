@@ -46,7 +46,7 @@
     <Compile Include="Customers\Customer.cs" />
     <Compile Include="Customers\CustomerFactory.cs" />
     <Compile Include="Restaurants\CustomerQueue.cs" />
-    <Compile Include="Restaurants\LittleRestaurant.cs" />
+    <Compile Include="Restaurants\SmallRestaurant.cs" />
     <Compile Include="Restaurants\Meal.cs" />
     <Compile Include="Customers\MealChangeEventArg.cs" />
     <Compile Include="Restaurants\NewCustomerEventArg.cs" />

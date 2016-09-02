@@ -10,7 +10,7 @@ namespace RestaurantSimulation
 
             CustomerFactory factory = new CustomerFactory();
             Table table = new Table();
-            LittleRestaurant restaurant = new LittleRestaurant(table, menu);
+            SmallRestaurant restaurant = new SmallRestaurant(table, menu);
 
             factory.NewCustomerEvent += restaurant.OnNewCustomer;
 

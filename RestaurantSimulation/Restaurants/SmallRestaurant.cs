@@ -2,7 +2,7 @@
 
 namespace RestaurantSimulation
 {
-    public class LittleRestaurant
+    public class SmallRestaurant
     {
         /// <summary>
         /// Number of tables in the restaurant (For now, just one)
@@ -17,14 +17,14 @@ namespace RestaurantSimulation
         /// <summary>
         /// Customer queue
         /// </summary>
-        public CustomerQueue<Customer> RestaurantQueue { get; set; }
+        public CustomerQueue<Customer> RestaurantQueue { get; protected set; }
 
         /// <summary>
         /// Menu of the restaurant (List of the foods that customers will go through them)
         /// </summary>
-        public Array Meals { get; set; }
+        public Array Meals { get; protected set; }
 
-        public LittleRestaurant(Table table, Array meals)
+        public SmallRestaurant(Table table, Array meals)
         {
             if (table == null)
                 throw new ArgumentNullException("Restaurant table cannot be null");
@@ -32,6 +32,9 @@ namespace RestaurantSimulation
             if (meals.Length == 0)
                 throw new ArgumentOutOfRangeException("Restaurant menu doesn't have any items");
 
+            if (meals.GetType().Name != "Meal[]")
+                throw new ArrayTypeMismatchException("Only an array of type Meal is allowed.");
+            
             NumberOfTables = 1;
             RestaurantTable = table;
             Meals = meals;
